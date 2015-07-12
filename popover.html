@@ -1,0 +1,21 @@
+<html>
+<head>
+    <link rel="stylesheet" href="popover.css" type="text/css" >
+    <script type="text/javascript">
+        function updateUrlList(container){
+            document.getElementById('urls').innerHTML = container;
+            var a = document.getElementsByTagName('a');
+            for (var i=a.length; i--;) {
+                a[i].addEventListener('click', sendClick);
+            } 
+            function sendClick(e){
+                safari.application.activeBrowserWindow.openTab().url = e.currentTarget;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p class="title">Recently Closed Tabs:</p>
+    <ol id="urls"></ol>
+</body>
+</html>

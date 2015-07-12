@@ -1,0 +1,105 @@
+<html>
+<head>
+    <script type="text/javascript">
+        //listen for close event
+        safari.application.addEventListener("close", closeHandler, true);
+        var urlList = [];
+        function closeHandler (e) {
+            var url =  e.target.url,
+                title = e.target.title,
+                i,
+                listLength = urlList.length,
+                urlObj;
+            
+            if (url === undefined || title === 'Untitled') {
+                return;
+            }    
+                
+            if (urlList.length >= 5) {
+                urlList.pop();
+            }
+            
+            urlObj = {
+                url: url, 
+                title: title
+            };
+            urlList.unshift(urlObj);
+        }
+        //listen for popover click
+        safari.application.addEventListener('popover', updatePopover, true);
+        function updatePopover () {
+            var listLength = urlList.length,
+                container = '';
+            if (listLength > 0){
+                for(i = 0; i < listLength; i++) {
+                    var urlObj = urlList[i],
+                        url,
+                        title,
+                        item;
+
+                    title = urlObj.title;
+                    url = urlObj.url;
+                    item = "<li><a target='_blank' href='" + url + "'>" + title + "</a></li>";
+                    container += item;
+                }
+            }
+            safari.extension.popovers[0].contentWindow.updateUrlList(container);
+        }
+
+        //listen for new tab opening
+        safari.application.addEventListener('open', openHandler, true);
+        
+        //listen for message from injected script
+        safari.application.addEventListener('message', showIndicator, false);
+        
+        //initialize settimeout function
+        var resetButton;
+        
+        function openHandler () {
+            //reset timeout every time new tab opened
+            clearTimeout(resetButton);
+        
+            //get width of window from injected script
+            safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('getIndicatorWidth', 'message');            
+        }
+        
+        function showIndicator (message) {
+            var numTabs,
+            defaultWidth = 560,
+            defaultTabNum = 5,
+            tabDiff,
+            expectedNoOverflowWidth,
+            windowWidth;
+            
+            //check correct message sent
+            if (message.name = 'setIndicatorWidth') {
+                
+                //get passed back width
+                windowWidth = message.message;
+        
+                //get number of currently open tabs
+                numTabs = safari.application.activeBrowserWindow.tabs.length;
+        
+                //determine extra tabs currently present on top of base
+                tabDiff = numTabs - defaultTabNum; 
+                
+                //calculate width window has to be not overflow tabs
+                expectedNoOverflowWidth = (tabDiff*98) + defaultWidth;
+
+                //if window width is shorter than what is expected, show indicator badge
+                if (windowWidth < expectedNoOverflowWidth) {
+                    //show number of tabs open in temporary badge
+                    safari.extension.toolbarItems[0].badge += 1;
+                }
+        
+                //remove badge on button after short time
+                resetButton = setTimeout( function(){
+                    safari.extension.toolbarItems[0].badge = 0;
+                }, 200);
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Jeff Keeling</string>
+	<key>Builder Version</key>
+	<string>10600.5.17</string>
+	<key>CFBundleDisplayName</key>
+	<string>Tab Restorer</string>
+	<key>CFBundleIdentifier</key>
+	<string>me.jeffkeeling.tabRestorer</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.4</string>
+	<key>CFBundleVersion</key>
+	<string>1.4</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Global Page</key>
+		<string>global.html</string>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>popover.html</string>
+				<key>Height</key>
+				<real>165</real>
+				<key>Identifier</key>
+				<string>myPopover</string>
+				<key>Width</key>
+				<real>300</real>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>showClosedTabs</string>
+				<key>Image</key>
+				<string>toolbar.png</string>
+				<key>Label</key>
+				<string>show closed tabs</string>
+				<key>Popover</key>
+				<string>myPopover</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>Start</key>
+			<array>
+				<string>injected.js</string>
+			</array>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Display a list of the last 5 closed tabs</string>
+	<key>DeveloperIdentifier</key>
+	<string>66592HUJRV</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://jeffkeeling.me/extensions/updatemanifest.plist</string>
+	<key>Website</key>
+	<string>http://jeffkeeling.me</string>
+</dict>
+</plist>
