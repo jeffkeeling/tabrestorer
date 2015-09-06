@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Jeff Keeling</string>
 	<key>Builder Version</key>
-	<string>10600.5.17</string>
+	<string>10600.8.9</string>
 	<key>CFBundleDisplayName</key>
 	<string>Tab Restorer</string>
 	<key>CFBundleIdentifier</key>
@@ -74,7 +74,7 @@
 		</dict>
 	</dict>
 	<key>Update Manifest URL</key>
-	<string>http://jeffkeeling.me/extensions/updatemanifest.plist</string>
+	<string>https://github.com/jeffkeeling/tabrestorer/updatemanifest.plist</string>
 	<key>Website</key>
 	<string>http://jeffkeeling.me</string>
 </dict>
