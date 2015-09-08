@@ -10,11 +10,11 @@
        <key>Developer Identifier</key>
        <string>66592HUJRV</string>
        <key>CFBundleVersion</key>
-       <string>1</string>
+       <string>1.4</string>
        <key>CFBundleShortVersionString</key>
-       <string>1</string>
+       <string>1.4</string>
        <key>URL</key>
-       <string>http://jeffkeeling.me/tabrestorer/updatemanifest.plist</string>
+       <string>https://github.com/jeffkeeling/tabrestorer/releases/latest</string>
      </dict>
    </array>
 </dict>
