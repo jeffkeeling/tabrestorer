@@ -16,6 +16,9 @@ If you open so many tabs that they overflow, it can be difficult to know if you 
 
 ## Version History
 
+###  1.5.3
+-  Another test patch version
+
 ###  1.5.2
 -  Test hook update
 
