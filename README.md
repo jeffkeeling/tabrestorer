@@ -19,9 +19,9 @@ The included hooks will update the update manifest and README to account for new
 
 Symlink the hooks like so:
     ```
-    ln -s pre-commit.sh .git/hooks/pre-commit
-    ln -s pre-commit-file-update.py .git/hooks/pre-commit-file-update.py
-    ln -s post-commit.sh .git/hooks/post-commit
+    ln -s ../../pre-commit.sh .git/hooks/pre-commit
+    ln -s ../../pre-commit-file-update.py .git/hooks/pre-commit-file-update.py
+    ln -s ../../post-commit.sh .git/hooks/post-commit
     ```
 
 The gh-pages page fetches the most up-to-date README data from the Master branch using the steps outline in [GithubDocSync](https://github.com/bradrhodes/GithubDocSync)
