@@ -18,11 +18,12 @@ If you open so many tabs that they overflow, it can be difficult to know if you 
 The included hooks will update the update manifest and README to account for new versions of the extension as well as provide a canonical link to the extension on the gh-pages branch.
 
 Symlink the hooks like so:
-    ```
-    ln -s ../../pre-commit.sh .git/hooks/pre-commit
-    ln -s ../../pre-commit-file-update.py .git/hooks/pre-commit-file-update.py
-    ln -s ../../post-commit.sh .git/hooks/post-commit
-    ```
+
+```
+ln -s ../../pre-commit.sh .git/hooks/pre-commit
+ln -s ../../pre-commit-file-update.py .git/hooks/pre-commit-file-update.py
+ln -s ../../post-commit.sh .git/hooks/post-commit
+```
 
 The gh-pages page fetches the most up-to-date README data from the Master branch using the steps outline in [GithubDocSync](https://github.com/bradrhodes/GithubDocSync)
 
