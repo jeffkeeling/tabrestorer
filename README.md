@@ -14,13 +14,19 @@ When you click the Tab Restorer button, you will see the 5 most recently closed 
 If you open so many tabs that they overflow, it can be difficult to know if you really opened another new tab. In the settings for this extension, you can turn on a badge alert to flash when you open a new overflowed tab.
 ![Screenshot of new tab overflow alert](https://raw.githubusercontent.com/jeffkeeling/tabrestorer/master/screenshot2.jpg)
 
+### Hooks
+The included hooks will update the update manifest and README to account for new versions of the extension as well as provide a canonical link to the extension on the gh-pages branch.
+
+Symlink the hooks like so:
+    ```
+    ln -s pre-commit.sh .git/hooks/pre-commit
+    ln -s pre-commit-file-update.py .git/hooks/pre-commit-file-update.py
+    ln -s post-commit.sh .git/hooks/post-commit
+    ```
+
+The gh-pages page fetches the most up-to-date README data from the Master branch using the steps outline in [GithubDocSync](https://github.com/bradrhodes/GithubDocSync)
+
 ## Version History
-
-###  1.5.3
--  Another test patch version
-
-###  1.5.2
--  Test hook update
 
 ### 1.5
  - Created settings menu for new tab notification
