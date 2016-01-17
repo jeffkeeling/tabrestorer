@@ -29,6 +29,9 @@ The gh-pages page fetches the most up-to-date README data from the Master branch
 
 ## Version History
 
+###  1.5.4
+-  Extra icon assets added
+
 ### 1.5
  - Created settings menu for new tab notification
 
